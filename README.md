@@ -39,7 +39,7 @@ Basemaps were originally tiled raster images (aka, JPEGs, PNGs, or even GIFs), r
 
 ArcGIS Online has over a dozen layer types that can contribute to your map. In practice, you'll most often use an assortment of layers for a basemap, and use one or two feature layers for your operational layers. The art of mapping is in the selection of layers, how they are styled, and how they fuse together to tell a story.
 
-When we say "map", we mean a collection of layers that are rendered together. In ArcGIS lingo, a map is a 2D representation of layers. A 3D representation of layers is **scene**. We will make both in this workshop. Another word that you will see often is "app." Web apps facilitate the interaction between the user and the map or scene. Apps can be simple, like an instant web map, or more complex, like a form that allows users to submit data while working in the field.
+When we say "map", we mean a collection of layers that are rendered together. In ArcGIS lingo, a map is a 2D representation of layers. A 3D representation of layers is a **scene**. We will make both in this workshop. Another word that you will see often is "app." Web apps facilitate the interaction between the user and the map or scene. Apps can be simple, like an instant web map, or more complex, like a form that allows users to submit data while working in the field.
 
 OK, I think we're ready to start adding data to our map. Let's [start the workshop](https://boydx.github.io/intro-agol/presentation/)!
 
