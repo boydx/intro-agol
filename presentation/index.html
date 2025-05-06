@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Welcome to GEO409</title>
+
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo409/slides/dist/reset.css" />
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo409/slides/dist/reveal.css" />
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo409/slides/dist/theme/league-109.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="https://uky-gis.github.io/geo409/slides/dist/plugin/highlight/tom-night-80.css"
+        id="highlight-theme" />
+    <style>
+        /* UK Colors: 
+                #c7c9c8 light gray 
+                #63666a dark gray
+                #15397f dark blue
+                #009bda light blue
+                #0033a0 official blue
+            */
+
+        .top-module {
+            position: absolute;
+            bottom: 1.5em;
+            left: 20px;
+            z-index: 3333;
+            font-size: 0.5em;
+            opacity: 0.5;
+        }
+
+        .item-download {
+            position: absolute !important;
+            /* left: 0 !important;
+      bottom: 0 !important; */
+            transform: translate(calc(100vw/2*-1), 100px) !important;
+            z-index: 9999;
+            font-size: 0.5em;
+            opacity: 1;
+        }
+
+        .ll,
+        .lr {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="top-module"><a target='_blank' href="https://github.com/boydx/intro-agol">TOC</a></div>
+        <div class="slides">
+            <section data-pre-load
+                data-background-image="https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg"
+                data-background-opacity="0.4">
+                <h2 class="r-fit-text">Welcome!</h2>
+                <!-- <h2>Welcome</h2> -->
+                <div class="ll">
+                    Image: Eastern Kentucky's Spring rhododendron blooms
+                </div>
+                <div class='lr'>May 9, 2025</div>
+            </section>
+            <section class="left"
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+
+                <img src="../images/portrait.jpg" width="200px" style='border-radius: 50%;float:right;' />
+                <h3>Boyd Shearer</h3>
+                Senior Lecturer, Mapping & GIS, UKy</br>
+                <a target="_blank" href="https://gis.uky.edu">gis.uky.edu</a></br>
+                <a target="_blank" href="https://outrageGIS.com">outrageGIS.com</a>
+            </section>
+            <section data-pre-load
+                data-background-image="https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg"
+                data-background-opacity="0.4">
+                <img width="100%" src="https://uky-gis.github.io/geo409/slides/images/logo-uk-geo.png" />
+
+            </section>
+
+            <section data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h2 class='title'>ArcGIS</h2>
+                <h5 class='fragment' style='font-size: 1.5em;color:#009bda;'>With a distinct Kentucky flavor</h5>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.2">
+                <h3>Tell me about your interests</h3>
+                <ul>
+                    <li class='fragment'>
+                        In this <a href='https://forms.gle/TdbECmKRQddnUigL7' target='_blank'>private form</a>
+                    </li>
+                </ul>
+            </section>
+            <section data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h1 class="r-fit-text">Quick FAQ</h1>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.2">
+                <h3>Support</h3>
+                <ul>
+                    <li class='fragment'>
+                        Office hours
+                        <ul>
+                            <li class='fragment'>Wed: 1:30 pm – 2:30 pm</li>
+                            <li class='fragment'>Tr: 2 pm – 4 pm</li>
+                            <li class='fragment'>Zoom: by appointment and very flexible</li>
+                        </ul>
+                    </li>
+                    <li class='fragment'>
+                        In lab outside of class time
+                        <ul>
+                            <li class='fragment'>By appointment with limited availability</li>
+                            <li class='fragment'>Weekends are an option</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.2">
+                <h3>Course mechanics </h3>
+                <ul>
+                    <li class='fragment'>
+                        <a target='_blank' href="https://uk.instructure.com/courses/2110633">Canvas</a> is where you
+                        start lessons and submit labs.
+                    </li>
+                    <li class='fragment'>
+                        The <a target='_blank' href="https://uky-gis.github.io/geo409">Course website</a> is where you
+                        find presentations, which contain links to data and other resources.
+                    </li>
+                </ul>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.2">
+                <h3>Tech reqs 🔭</h3>
+                <ul>
+                    <li class='fragment'>
+                        ArcGIS Pro (FYI: <a target='_blank' href="https://www.esri.com/training/mooc/">free
+                            MOOCs</a>).
+                    </li>
+                    <li class='fragment'>
+                        Lab computers have all required software.
+                    </li>
+                    <li class='fragment'>
+                        Use personal computer, but install required software.
+                    </li>
+                </ul>
+            </section>
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.2">
+                <h3>Tech reqs 🔭</h3>
+                <ul>
+                    <li>
+                        No Windows OS? (or want better computer?)
+                        <ul>
+                            <li class='fragment'>Get a virtual PC
+                                <ul>
+                                    <li class='fragment'><a href="https://shadow.tech/" target='_blank'>Shadow.tech</a>
+                                        💯😎</li>
+                                    <li class='fragment'><a href="https://www.parallels.com/" target='_blank'>Parallels
+                                            Desktop</a> 💰🙂</li>
+                                    <li class='fragment'><a
+                                            href="https://www.uky.edu/its/customer-support-student-it-enablement/classroom-av-support-student-technology-services/virtual-den"
+                                            target='_blank'>Virtual Den</a> 👌🤷</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h1 class="r-fit-text">Instructor</h1>
+            </section>
+            <section data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h6 style='font-size: 1.5em;'>What helps me teach</h6>
+                <h2 class="r-fit-text" style='margin-top:-20px;'>GIS & MAPPING?</h2>
+            </section>
+            <section data-background-image='https://live.staticflickr.com/7480/27309184576_80b7d25ff0_o.jpg'
+                data-background-opacity="0.2" class='left'>
+                <h3>Make maps</h3>
+                <ul>
+                    <li class='fragment'>
+                        25+ years designing maps for print and web
+                    </li>
+                    <li class='fragment'>
+                        <a href='https://outrageGIS.com'>outrageGIS.com</a>
+                    </li>
+                </ul>
+            </section>
+            <section class='left' data-background-image='https://c1.staticflickr.com/1/390/31713088315_f0326f577c_k.jpg'
+                data-background-opacity="0.2">
+                <h3>photograph</h3>
+                <ul>
+                    <li class='fragment'>
+                        a map represents a real place
+                    </li>
+                    <li class='fragment'>
+                        with real processes & people.
+                    </li>
+                </ul>
+            </section>
+            <section class='left'
+                data-background-image='https://c1.staticflickr.com/6/5324/30627102241_3cde14d218_o.jpg'
+                data-background-opacity="0.2">
+                <h3>explore</h3>
+                <ul>
+                    <li class='fragment'>
+                        new places
+                    </li>
+                    <li class='fragment'>
+                        with the chance of being lost.
+                    </li>
+                </ul>
+            </section>
+            <section class='left'
+                data-background-image='https://farm2.staticflickr.com/1769/42671081904_40c84be780_h.jpg'
+                data-background-opacity="0.2">
+                <h3>experiment</h3>
+                <ul>
+                    <li class='fragment'>
+                        with new tools and methods
+                    </li>
+                    <li class='fragment'>
+                        to create a unique style.
+                    </li>
+                </ul>
+            </section>
+            <section class='left'
+                data-background-image='https://farm5.staticflickr.com/4175/34413343182_c906452c0b_h.jpg'
+                data-background-opacity="0.4">
+                <h3>& field trips!</h3>
+                <ul>
+                    <li class='fragment'>
+                        to measure and test our maps.
+                    </li>
+                </ul>
+            </section>
+
+            <section data-background-iframe='https://outragegis.com/gorge/map' data-background-interactive
+                data-background-opacity="1" data-background-color="#fff">
+            </section>
+
+            <section data-background-iframe='https://kuula.co/share/7Y4wL' data-background-interactive
+                data-background-opacity="1">
+                <!-- <h6 class="r-fit-text">Measuring arches</h6> -->
+            </section>
+
+            <section data-background-image="images/theodolite.jpg" data-background-interactive
+                data-background-opacity="1" data-background-color="white" data-background-size="contain"></section>
+
+            <section data-background-image="images/theodolite2.jpg" data-background-interactive
+                data-background-opacity="1" data-background-color="white" data-background-size="contain"></section>
+
+            <section
+                data-background-iframe='https://kuula.co/share/73Frs?logo=0&info=0&fs=1&vr=1&zoom=1&initload=0&thumbs=1'
+                data-background-interactive data-background-opacity="1">
+                <!-- <h6 class="r-fit-text">Measuring arches</h6> -->
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/50827784978_5e0c297a61_k.jpg'
+                data-background-opacity="1">
+                <!-- <h6 class="r-fit-text">Measuring bridges</h6> -->
+            </section>
+
+            <section
+                data-background-iframe='https://nyc3.digitaloceanspaces.com/astoria/xyz/st-suspension-bridge/index.html'
+                data-background-interactive data-background-opacity="1">
+                <!-- <h6 class="r-fit-text">Lidar scanner</h6> -->
+            </section>
+
+            <!-- <section data-background-iframe="https://nyc3.digitaloceanspaces.com/astoria/xyz/wh-lab/index.html"
+                data-background-interactive data-background-opacity="1">
+            </section> -->
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/52042392071_41bc718f64_k.jpg'
+                data-background-opacity="1">
+                <!-- <h6 class="r-fit-text">Measuring bridges</h6> -->
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/52042643229_6a3eea0eee_k.jpg'
+                data-background-opacity="1">
+                <!-- <h6 class="r-fit-text">Measuring bridges</h6> -->
+            </section>
+
+            <section data-background-iframe='https://nyc3.digitaloceanspaces.com/astoria/xyz/uk-stream/index.html'
+                data-background-interactive data-background-opacity="1">
+                <!-- <h6 class="r-fit-text">Lidar scanner</h6> -->
+            </section>
+
+            <section data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h1 class="r-fit-text">✨Data✨</h1>
+            </section>
+
+
+
+
+
+            <!-- <section data-background-iframe='https://www.youtube.com/embed/zkNaO77CbI0'
+                data-background-interactive data-background-opacity="1" data-background-color="white">
+            </section> -->
+
+            <section data-background-iframe='https://www.youtube.com/embed/sTgCdq8wU9M' data-background-interactive
+                data-background-opacity="1" data-background-color="white">
+            </section>
+
+
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Digital twin?</h3>
+                <ul>
+                    <li class='fragment'>
+                        Will our maps be as detailed as the real thing? <span class="fragment">A Roblox experience
+                            instead of a physical trip? <span class="fragment">🤔</span>
+                    </li>
+
+                    <li class='fragment'>
+                        Wear a VR headset and view <a target="_blank"
+                            href="https://contig.us/hawaii/uky-campus/">this</a>.
+                    </li>
+                    <li class='fragment'>
+                        A Metaverse trip to Mammoth Cave?
+                    </li>
+                </ul>
+            </section>
+
+            <section data-background-iframe="https://www.youtube.com/embed/12IB5k1_P4A" data-background-interactive
+                data-background-opacity="1" data-background-size='cover'>
+
+            </section>
+
+            <section data-background-image='https://live.staticflickr.com/65535/49184295056_71481a5ddd_k.jpg'
+                data-background-opacity="1">
+            </section>
+
+            <section data-background-iframe="https://www.youtube.com/embed/QI1KsdSBNwM?si=ar-fiRs_0GhAd6lS"
+                data-background-interactive data-background-opacity="1" data-background-size='cover'>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>A map is </h3>
+                <ul>
+                    <li class='fragment'>
+                        An artistic rendering of Earth.
+                    </li>
+                    <li class='fragment'>
+                        A measurement of our environment.
+                    </li>
+                    <li class='fragment'>
+                        A tool for remembering the past and navigating the unknown.
+                    </li>
+                    <li class='fragment'>
+                        Are digital twins maps?
+                    </li>
+                </ul>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Past courses</h3>
+                <ul>
+                    <li class='fragment'>
+                        Stay local
+                    </li>
+                    <li class='fragment'>
+                        make snazzy visuals
+                    </li>
+                    <li class='fragment'>
+                        summary measurements
+                    </li>
+                    <li class='fragment'>
+                        and tell a story.
+                    </li>
+                </ul>
+            </section>
+
+
+
+            <!-- Examples -->
+
+            <section data-pre-load
+                data-background-image="https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg"
+                data-background-opacity="0.4">
+                <h1 class="r-fit-text">Examples</h1>
+            </section>
+
+            <section data-pre-load data-background-image="https://haydenjhanc.github.io/GEO409Final/WolfCreekDam.gif"
+                data-background-opacity="0.4">
+                <h3><a target='_blank' href="https://haydenjhanc.github.io/GEO409Final/WolfCreekDam.html">Spring,
+                        2024</a></h3>
+            </section>
+
+            <section data-pre-load data-background-image="https://nmooregray.github.io/cabins-yall/cliffview_change.jpg"
+                data-background-opacity="0.4">
+                <h3><a target='_blank' href="https://nmooregray.github.io/cabins-yall/">Spring,
+                        2024</a></h3>
+            </section>
+
+            <section data-pre-load data-background-image="https://schimpffafa.github.io/409final/uoflBuilt.jpg"
+                data-background-opacity="0.4">
+                <h3><a target='_blank' href="https://schimpffafa.github.io/409final/">Spring,
+                        2024</a></h3>
+            </section>
+
+            <section data-pre-load
+                data-background-image="https://live.staticflickr.com/65535/52843844210_55dc051803_k.jpg"
+                data-background-opacity="0.4">
+                <h3><a target='_blank' href="https://live.staticflickr.com/65535/52843844210_55dc051803_k.jpg">Spring,
+                        2023</a></h3>
+            </section>
+
+            <section data-pre-load data-background-image="images/lville-sports.jpg" data-background-opacity="0.4">
+                <h3><a target='_blank' href="https://garnieri.github.io/lville-sports-tour/">Spring, 2023</a></h3>
+            </section>
+
+            <section data-pre-load data-background-image="images/geo509.jpg" data-background-opacity="0.4">
+                <h3><a target='_blank' href="https://uky-gis.github.io/geo509/report-2022/">Fall, 2022</a></h3>
+            </section>
+
+            <section data-pre-load data-background-image="images/gemcity.jpg" data-background-opacity="0.4">
+                <h3><a target='_blank' href="https://reece-foley.github.io/Gem-City/">Spring, 2022</a></h3>
+            </section>
+
+            <section data-pre-load
+                data-background-image="https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg"
+                data-background-opacity="0.4">
+                <h3>Older projects</h3>
+            </section>
+
+
+            <section data-background-iframe='https://reece2ke.github.io/geo409_site' data-background-interactive
+                data-background-opacity="1" data-background-color="white">
+            </section>
+            <!-- <section data-background-iframe='https://kuula.co/share/7lLKn' data-background-interactive
+                data-background-opacity="0.4">
+                <h6 class="r-fit-text">The team</h6>
+            </section> -->
+            <section data-background-iframe='https://rvirto01.github.io/NRE355_Tree_canopy_study'
+                data-background-interactive data-background-opacity="1" data-background-color="white">
+            </section>
+            <section
+                data-background-image='https://geography.as.uky.edu/sites/default/files/BoydShearer_Lab3_ArboretumWoodsTreeCensus.jpg'
+                data-background-interactive data-background-opacity="1" data-background-color="white"
+                data-background-size='contain'>
+            </section>
+
+            <section
+                data-background-image='https://geography.as.uky.edu/sites/default/files/RobinsonForestCamp_TrailMap.jpg'
+                data-background-interactive data-background-opacity="1" data-background-color="white"
+                data-background-size='contain'>
+            </section>
+
+            <section data-background-iframe='https://boydx.github.io/wildfires/' data-background-interactive
+                data-background-opacity="1" data-background-color="white">
+            </section>
+            <section data-background-iframe='https://boydx.github.io/collisions' data-background-interactive
+                data-background-opacity="1" data-background-color="white">
+            </section>
+
+            <!-- <section data-background-iframe='http://sweb.uky.edu/~blshea1/nre355/pksnp' data-background-interactive
+                data-background-opacity="1" data-background-color="white">
+            </section>
+
+            <section data-background-iframe='http://sweb.uky.edu/~blshea1/nre355/pine-mountain-canopy-tour'
+                data-background-interactive data-background-opacity="1" data-background-color="white">
+            </section>
+
+            <section data-background-iframe='https://uky-gis.github.io/maps/student-projects'
+                data-background-interactive data-background-opacity="1" data-background-color="white">
+            </section> -->
+
+
+
+
+            <!-- Goals -->
+
+            <section data-pre-load
+                data-background-image="https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg"
+                data-background-opacity="0.4">
+                <h1 class="r-fit-text">Our goals</h1>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>We will</h3>
+                <ul>
+                    <li class='fragment'>
+                        Work in cutting-edge technology and data
+                        <ul>
+                            <li class='fragment'>
+                                ArcGIS Pro
+                            </li>
+                            <li class='fragment'>
+                                Lidar
+                            </li>
+                            <li class='fragment'>
+                                Python
+                            </li>
+                            <li class='fragment'>
+                                Git & GitHub
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class='fragment'>
+                        Map a site in exquisite detail
+                        <ul>
+                            <li class='fragment'>
+                                From feet to inches in resolution
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='fragment'>
+                        Create a public portfolio
+                    </li>
+                </ul>
+            </section>
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>ArcGIS Pro</h3>
+                <ul>
+                    <li class='fragment'>
+                        Leading GIS & mapping software (looks good on a resume)
+                    </li>
+                    <li class='fragment'>
+                        Well-documented help and extensive support
+                    </li>
+                    <li class='fragment'>
+                        We can stay almost entirely in AP
+                    </li>
+                    <li class='fragment'>
+                        Not free (like QGIS) and runs only on Windows OS 😞
+                    </li>
+                </ul>
+            </section>
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Lidar</h3>
+                <ul>
+                    <li class='fragment'>
+                        LIght Detection And Ranging
+                    </li>
+                    <li class='fragment'>
+                        Point cloud is densely sampled features using infrared lasers
+                    </li>
+                    <li class='fragment'>
+                        New frontier in mapping and analysis
+                    </li>
+                </ul>
+            </section>
+
+            <section class='left'
+                data-background-image='https://farm9.staticflickr.com/8062/29138854162_85f7e68158_h.jpg'
+                data-background-opacity="0.6" data-background-size='contain' data-background-color='#000'>
+                <h3>Lidar <a href="https://farm9.staticflickr.com/8062/29138854162_1cd274d646_o.jpg">example</a></h3>
+                <ul>
+                    <li class='fragment'>
+                        Aerial lidar for entire state <img src='images/ky-black.svg' width='200px'
+                            style='display: inline-block;transform: translate(0px, 40px);'>
+                    </li>
+                    <li class='fragment'>
+                        Ground and above-ground features
+                    </li>
+                </ul>
+            </section>
+
+            <section class='left' data-background-image='images/terrabytes27.gif' data-background-opacity="0.6">
+                <h3>Lidar data</h3>
+                <ul>
+                    <li class='fragment'>
+                        Massive
+                    </li>
+                    <li class='fragment'>
+                        >20 TB for first edition
+                    </li>
+                    <li class='fragment'>
+                        State divided into 46,105 tiles
+                    </li>
+                    <li class='fragment'>
+                        How to handle so much data?
+                    </li>
+                </ul>
+            </section>
+
+            <section class='left' data-background-image='images/terrabytes27.gif' data-background-opacity="0.4">
+                <h3>Python</h3>
+                <ul>
+                    <li class='fragment'>
+                        Among the most popular programming languages
+                    </li>
+                    <li class='fragment'>
+                        We'll start with no programming knowledge
+                    </li>
+                    <li class='fragment'>
+                        Text-based instructions (aka code) make working with big data a lot easier.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Code -->
+
+            <section data-pre-load
+                data-background-image="https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg"
+                data-background-opacity="0.4">
+                <h1 class="r-fit-text">Code > Visualize</h1>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Code examples</h3>
+                <ul>
+                    <li class='fragment'>
+                        First challenge in learning code is understanding syntax.
+                        <ul>
+                            <li class='fragment'>
+                                Comments
+                            </li>
+                            <li class='fragment'>
+                                Data
+                            </li>
+                            <li class='fragment'>
+                                Instructions
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section data-markdown data-separator="---" data-background-color=#2D2D2D>
+                <textarea data-template>
+            Examples
+            ---
+            ```sql [1|3-4|5-6]
+            /* Select Kentucky from polygon layer of states. */
+
+            SELECT * FROM
+                state_polygon_layer
+            WHERE
+                state_name = 'Kentucky'
+
+            /* That's it! */
+            ```
+
+            ---
+            That was
+            ## SQL
+            Structured Query Language
+
+            ---
+            ```markdown [1-2|4-6|8]
+            ## My Project
+            ### of little kitties 🐱✊🏻
+
+            This page hosts my mapping project assets:
+            * Visit my instagram page [@cats_of_instagram](https://www.instagram.com/cats_of_instagram) 
+            * *A fun fact* I have over 10 million follwers!
+
+            ![Cats of Instagram](images/cats_of_instagram.jpg)
+            ```
+
+            ---
+            ## Renders
+            in the browser to
+
+            ---
+            ## My Project
+            ### of little kitties 🐱✊🏻
+
+            This page hosts my mapping project assets:
+            * Visit my instagram page [@cats_of_instagram](https://www.instagram.com/cats_of_instagram) 
+            * *A fun fact:* I have over 10 million follwers!
+
+            ![Cats of Instagram](images/cats_of_instagram.jpg)
+
+            ---
+            That was
+            ## Markdown
+            One of the most popular markup languages to make well-formatted documentation.
+
+            ---
+            Let's try
+            ## Python
+
+            ---
+            ```python [1|2-4|5-7|8-19|20-22]
+            # What's your letter grade this semester?
+            number_grade = input("Enter value between 0 and 100: ")
+            try:
+                x = float(number_grade)
+            except:
+                print("Please enter a NUMBER value between 0 and 100")
+                quit()
+            if x > 100:
+                print("Please use a value between 0 and 100")
+            elif x < 0:
+                print("Please use a value between 0 and 100")
+            elif x >= 90:
+                print("A")
+            elif x >= 80:
+                print("B")
+            elif x >= 70:
+                print("C")
+            elif x >= 60:
+                print("D")
+            else:
+                print(":''(")
+                print(':\'(')
+            print("All done, friends! Should it be rounded up?")
+            ```
+            [Run](https://trinket.io/python3/af47398bef)
+
+            </textarea>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Why even code?</h3>
+                <ul>
+                    <li class='fragment'>
+                        When we have emerging tech like AI and ML?
+                    </li>
+                    <li class='fragment'>
+                        DALL·E generate, 'a map of kentucky'
+                    </li>
+                    <li class='fragment'>
+                        'topographic map of kentucky, united states showing parks and forests'
+                    </li>
+                </ul>
+            </section>
+
+            <section data-background-image='images/DALL-kentucky.png' data-background-opacity="1">
+            </section>
+
+            <section data-background-image='images/DALL-forests.png' data-background-opacity="1">
+            </section>
+
+            <section
+                data-background-image='https://images.squarespace-cdn.com/content/v1/5a25370fc027d841ff016862/1595407756960-84OWBT8TZI9X4Z43E1ZA/mapdreamer1.gif'
+                data-background-opacity="1">
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Why even code?</h3>
+                <ul>
+                    <li class='fragment'>
+                        ArcGIS Pro seems like a primarily visual tool.
+                    </li>
+                    <li class='fragment'>
+                        Well, maps are visualizations of data.
+                    </li>
+                    <li class='fragment'>
+                        Data management majority of work.
+                    </li>
+                    <li class='fragment'>
+                        Code is a set of reproducible instructions.
+                    </li>
+                </ul>
+            </section>
+
+            <section data-background-iframe='https://www.youtube.com/embed/fvhNadKjE8g' data-background-size="cover">
+
+            </section>
+
+            <section data-background-iframe='https://www.youtube.com/embed/VQZTZsXk8sA' data-background-size="cover">
+            </section>
+
+            <section data-background-iframe='https://www.youtube.com/embed/LLzFNlCjTSo' data-background-size="cover">
+            </section>
+
+            <section data-background-iframe='https://www.youtube.com/embed/gsry2SYOFCw' data-background-size="cover">
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>PY4E</h3>
+                <ul>
+                    <li class='fragment'>
+                        Previous videos are from <a href="https://www.py4e.com/lessons/intro">Python for Everybody</a>,
+                        a free online course by Chuck Severance.
+                        <ul>
+                            <li class='fragment'>
+                                <a href='https://youtu.be/fvhNadKjE8g'>Part 1</a>
+                            </li>
+                            <li class='fragment'>
+                                <a href='https://youtu.be/VQZTZsXk8sA'>Part 2</a>
+                            </li>
+                            <li class='fragment'>
+                                <a href='https://youtu.be/LLzFNlCjTSo'>Part 3</a>
+                            </li>
+                            <li class='fragment'>
+                                <a href='https://youtu.be/gsry2SYOFCw'>Part 4</a>
+                            </li>
+                        </ul>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Git & GitHub</h3>
+                <ul>
+                    <li class='fragment'>
+                        Code management, backup, and collaboration.
+                    </li>
+                    <li class='fragment'>
+                        Learn basic web page development.
+                    </li>
+                    <li class='fragment'>
+                        Publish public portfolios of your maps. 😀😀
+                    </li>
+                </ul>
+            </section>
+
+            <section data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h1 class="r-fit-text">Theme</h1>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h2>Topographic</h2>
+                <ul>
+                    <li class='fragment'>
+                        measurements and visualizations.
+                    </li>
+                    <li class='fragment'>
+                        Topography <span class='fragment'>(place + writing)</span> <span class='fragment'>can include
+                            everything from the bottom up.</span>
+                    </li>
+                    <li class='fragment'>
+                        Topography <span class='fragment'>(place + writing)</span> <span class='fragment'>can include
+                            everything from the bottom up.</span>
+                    </li>
+                    <li class='fragment'>
+                        Add the dimension of time. <span class='fragment'>How does topography change?</span>
+                    </li>
+
+                </ul>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h2>Final project</h2>
+                <ul>
+                    <li class='fragment'>
+                        Make 3D and 2D site map
+                        <ul>
+                            <li class='fragment'>
+                                Interactive map,
+                            </li>
+                            <li class='fragment'>
+                                <a href="https://potree.github.io">Potree</a> point cloud renderer (<a target="_blank"
+                                    href="https://outragegis.com/data/pointclouds/">Ky examples</a>),
+                            </li>
+                            <li class='fragment'>
+                                <a href="https://cesium.com/">Cesium Ion</a> web platform,
+                            </li>
+                            <li class='fragment'>
+                                or a video.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='fragment'>
+                        Publish online
+                    </li>
+                </ul>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <h3>Want to do well?</h3>
+                <ul>
+                    <li class='fragment'>
+                        Read the docs.
+                    </li>
+                    <li class='fragment'>
+                        Practice <span class="fragment">by experimenting.</span>
+                    </li>
+                    <li class='fragment'>
+                        Keep in touch.
+                    </li>
+                    <li class='fragment'>
+                        Find your landscape.
+                    </li>
+                </ul>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <blockquote style="font-size: 1.6rem;">
+                    "I just wanted to share some news! I accepted an offer to
+                    work at NV5 in Oregon this morning working w land use/ land cover, ... LiDAR! I wanted to thank you
+                    for all of your help over the course of the semester and the class itself which was a huge factor in
+                    me getting the job! I showed them my repos and HTML website and also brought a portfolio of some
+                    layouts from the semester, they were really impressed and having a background in coding and web
+                    mapping really set me apart from other candidates, so thank you so so much!"
+                    <footer style="margin-top:1rem;color:skyblue;">-Genevieve (edited for brevity)</footer>
+            </section>
+
+            <section class='left'
+                data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.3">
+                <blockquote style="font-size: 1.6rem;">
+                    "Hoping to connect. Your GIS class was what propelled me to an 8-year career in the field. When I
+                    tell people how I got into this industry it entails that course."
+                    <footer style="margin-top:1rem;color:skyblue;">-Philip (edited for brevity)</footer>
+            </section>
+
+
+
+            <section data-background-image='https://live.staticflickr.com/65535/53731933146_fe9a1dc8d4_k.jpg'
+                data-background-opacity="0.4">
+                <h1 class="r-fit-text">Let's Map!</h1>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://uky-gis.github.io/geo409/slides/dist/reveal.js"></script>
+    <script src="https://uky-gis.github.io/geo409/slides/plugin/notes/notes.js"></script>
+    <script src="https://uky-gis.github.io/geo409/slides/plugin/markdown/markdown.js"></script>
+    <script src="https://uky-gis.github.io/geo409/slides/plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            backgroundTransition: "fade",
+            // Transition style
+            transition: "fade", // none/fade/slide/convex/concave/zoom
+
+            // Transition speed
+            transitionSpeed: "fast", // default/fast/slow
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>
