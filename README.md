@@ -3,13 +3,21 @@
 ![Transy ArcGIS Online Workshop](./images/intro.jpg)  
 _Transylvania University's ArcGIS Portal_
 
+## Details
+
+- Date: 3–5 PM, May 9, 2025
+- Location: DArt Lab
+- Instructor: [Boyd Shearer](https://geography.as.uky.edu/users/blshea1)
+- ArcGIS Portal login: [transy.maps.arcgis.com](https://transy.maps.arcgis.com/home/index.html)
+- Presentation: [workshop slides](./presentation)
+
 ## Agenda
 
 - Add your data to ArcGIS Online. Please bring a spatial dataset to the workshop. It can be a shapefile, a KML, a CSV file with latitude and longitude coordinates, or a GeoJSON file. If you don't have any data, we'll have plenty of data provided during the workshop.
 - Style your data with a basemap and deploy a web map.
 - Explore open data portals and pull in data from other sources.
 - Create an app to harvest data from the field.
-- Create a scene and deploy a story map.
+- Build a scene and deploy a story map.
 
 ## Overview
 
@@ -37,8 +45,8 @@ OK, I think we're ready to start adding data to our map. Let's [start the worksh
 
 ## Resources
 
-- [ArcGIS Online Documentation](https://www.esri.com/en-us/arcgis/products/arcgis-online/resources-new)
-- [ERSI's MOOCs](https://www.esri.com/training/mooc/)
-- [[UCGIS] GIS&T Body of Knowledge](https://gistbok-topics.ucgis.org/UCGIS)
-- [Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/gentle_gis_introduction/index.html)
-- [Cartography Guide](https://www.axismaps.com/guide)
+- [ArcGIS Online Documentation](https://www.esri.com/en-us/arcgis/products/arcgis-online/resources-new) provides a gateway to ArcGIS Online tutorials and help documentation.
+- [ERSI's MOOCs](https://www.esri.com/training/mooc/) offer free online courses on a variety of topics.
+- [[UCGIS] GIS&T Body of Knowledge](https://gistbok-topics.ucgis.org/UCGIS) is a comprehensive resource for GIS education and training.
+- [Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/gentle_gis_introduction/index.html) is provided by QGIS, a free and open-source GIS software, which complements ArcGIS Pro for Mac users.
+- [Cartography Guide](https://www.axismaps.com/guide) by Axis Maps is great reference for cartographic design.
