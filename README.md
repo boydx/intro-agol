@@ -14,7 +14,7 @@ _Transylvania University's ArcGIS Portal_
 ## Agenda
 
 - Add your data to ArcGIS Online. Please bring a spatial dataset to the workshop. It can be a shapefile, a KML, a CSV file with latitude and longitude coordinates, or a GeoJSON file. If you don't have any data, we'll have plenty of data provided during the workshop.
-- Style your data with a basemap and deploy a web map.
+- Style your data, add a basemap, and deploy a web map.
 - Explore open data portals and pull in data from other sources.
 - Create an app to harvest data from the field.
 - Build a scene and deploy a story map.
