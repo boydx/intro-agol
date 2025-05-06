@@ -13,7 +13,7 @@ _Transylvania University's ArcGIS Portal_
 
 ## Agenda
 
-- Add your data to ArcGIS Online. Please bring a spatial dataset to the workshop. It can be a shapefile, a KML, a CSV file with latitude and longitude coordinates, or a GeoJSON file. If you don't have any data, we'll have plenty of data provided during the workshop.
+- Add your data to ArcGIS Online. Please bring a spatial dataset to the workshop. It can be a Shapefile, a KML, a CSV file with latitude and longitude coordinates, or a GeoJSON file. If you don't have any data, we'll have plenty of data provided during the workshop.
 - Style your data, add a basemap, and deploy a web map.
 - Explore open data portals and pull in data from other sources.
 - Create an app to harvest data from the field.
@@ -31,15 +31,15 @@ However, users need not have ArcGIS Pro to use ArcGIS Online. The platform offer
 
 Maps are composed of layers of data, and their stacking order determines how they are displayed. Let's imagine the top layer shows a road network. The next layer down shows streams and waterways, and the bottom layer may be an aerial photograph or terrain shaded relief. In ArcGIS Online, we can add layers to our map in the same way.
 
-We have two distinct types of layers: operational layers and basemap layers. Operational layers are the data layers that you add to your map and can highly customize their styling. We can add interactivity like popups and derive other types of analysis from operational layers. Basemaps are the non-interactive background layers that provide context for your operational layers.
+We have two distinct types of layers: **operational** layers and **basemap** layers. Operational layers are the data layers that you add to your map and customize their symbology. We can add interactivity like popups and derive other types of analysis from operational layers. Basemaps are the non-interactive background layers that provide context for your operational layers.
 
-The most common type of operational layer is a feature layer. Feature layers are composed of discrete features, which are the individual points, lines, or polygons representing real-world objects. Each feature can have tabular attributes that describe it. Feature layers can be created from a variety of data sources and files, including Shapefiles and CSV files.
+The most common type of operational layer is a **feature layer**. Feature layers are composed of discrete features, which are the individual points, lines, or polygons representing real-world objects. Each feature can have tabular attributes that describe it. Feature layers can be created from a variety of data sources and files, including Shapefiles and CSV files.
 
 Basemaps were originally tiled raster images (aka, JPEGs, PNGs, or even GIFs), rendered at different zoom levels. This is still the case for many basemaps, but the trend during the past few years is to use vector tiles. Vector tiles are a more efficient way to render maps in the browser (because it sends elemental points, lines, and polygons to the browser) and support dynamic styling at runtime – a game changer in web mapping. ArcGIS Online offers a Vector Tile Style Editor that allows you create customized base maps.
 
-ArcGIS Online has over a dozen types of layers that can contribute to your map. In practice, you'll most often use an assortment of layers for a basemap, and use one or two feature layers for your operational layers. The art of mapping is in the selection of layers, how they are styled, and how they fuse together to tell a story.
+ArcGIS Online has over a dozen layer types that can contribute to your map. In practice, you'll most often use an assortment of layers for a basemap, and use one or two feature layers for your operational layers. The art of mapping is in the selection of layers, how they are styled, and how they fuse together to tell a story.
 
-When we say "map", we mean a collection of layers that are rendered together. In ArcGIS lingo, a map is a 2D representation of layers. A 3D representation of layers is called a "scene." We will make both in this workshop. Another word that you will see often is "app." Web apps facilitate the interaction between the user and the map or scene. Apps can be simple, like an instant web app, or more complex, like a web form that allows users to submit data in the field.
+When we say "map", we mean a collection of layers that are rendered together. In ArcGIS lingo, a map is a 2D representation of layers. A 3D representation of layers is called a "scene." We will make both in this workshop. Another word that you will see often is "app." Web apps facilitate the interaction between the user and the map or scene. Apps can be simple, like an instant web map, or more complex, like a form that allows users to submit data while working in the field.
 
 OK, I think we're ready to start adding data to our map. Let's [start the workshop](https://boydx.github.io/intro-agol/presentation/)!
 
