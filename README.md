@@ -10,6 +10,7 @@ _Transylvania University's ArcGIS Portal_
 - Instructor: [Boyd Shearer](https://geography.as.uky.edu/users/blshea1)
 - ArcGIS Portal login: [transy.maps.arcgis.com](https://transy.maps.arcgis.com/home/index.html)
 - Presentation: [workshop slides](https://boydx.github.io/intro-agol/presentation/)
+- Download and install app: [Field maps](https://www.esri.com/en-us/arcgis/products/arcgis-field-maps/downloads)
 
 ## Agenda
 
